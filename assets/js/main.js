@@ -5,8 +5,6 @@
 MILESTONE 0:
 Creare l’array di oggetti con le informazioni fornite.
 
-MILESTONE 1:
-Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto
 
 MILESTONE 2:
 Stampare le stesse informazioni su DOM sottoforma di stringhe
@@ -16,6 +14,8 @@ Trasformare la stringa foto in una immagine effettiva
 BONUS 2:
 Organizzare i singoli membri in card/schede */
 
+/* MILESTONE 1:
+Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto */
 
 const images = [
     {
@@ -40,4 +40,28 @@ const images = [
         text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
     }
 ];
-console.log(images);
+images.forEach(movies => {
+    console.log(movies.image);
+    console.log(movies.title);
+    console.log(movies.text);
+});
+
+
+
+//Seleziono l'elemento della DOM immagine in cui posizionare tutte le immagini
+const imagesElement = document.querySelector('.slider > .images')
+console.log(imagesElement);
+
+// Aggiungo un nuovo elemento nella dom img più descrizione del film
+images.forEach((movie) => {
+    imagesElement.innerHTML += `
+    <div class="movie">
+    <h2 class="movie_title">${movie.title}</h2>
+    <img class="img-fluid" src="./assets/${movie.image}" alt="Movie">
+    <h3 class="movie_description">${movie.text}</h3>
+    </div>`;
+});
+
+
+// Seleziono l'immagine attiva 
+let activeImage = 0;
