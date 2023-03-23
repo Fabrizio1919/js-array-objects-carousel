@@ -86,7 +86,7 @@ nextEl.addEventListener('click', function () {
     currentSlide.classList.remove('active')
 
     if (activeImage == slideImagesElements.length - 1) {
-        activeImage = 0
+        activeImage = 0;
     } else {
         activeImage++
     }
@@ -102,13 +102,13 @@ const prevEl = document.querySelector('.prev')
 prevEl.addEventListener('click', function () {
     console.log('cliccato prev');
     console.log(slideImagesElements);
-    // Seleziono currentSlide e loggo in cosole
+    // Seleziono currentSlide e loggo in console
     const currentSlide = slideImagesElements[activeImage]
     console.log(currentSlide);
     currentSlide.classList.remove('active')
 
     if (activeImage == 0) {
-        activeImage = slideImagesElements -1
+        activeImage = slideImagesElements.length - 1;
     } else {
         activeImage--
     }
