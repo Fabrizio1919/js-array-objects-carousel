@@ -63,9 +63,9 @@ images.forEach((movie, i) => {
     }
     imagesElement.innerHTML += `
     <div class="movie ${isActive}">
-    <h2 class="movie_title">${movie.title}</h2>
+    <h2 class="movie_title text-center">${movie.title}</h2>
     <img class="img-fluid" src="./assets/${movie.image}" alt="Movie" ${i}>
-    <h3 class="movie_description">${movie.text}</h3>
+    <h6 class="movie_description text-center">${movie.text}</h6>
     </div>`;
 });
 
@@ -110,8 +110,18 @@ prevEl.addEventListener('click', function () {
 
 
 
+/* if (activeImage, === 4) {
+    activeImage = 0
+} else {
+    activeImage++
+}
 
-
+if (activeImage, === 4) {
+    activeImage = 0
+} else {
+    activeImage--
+}
+ */
 
 
 
