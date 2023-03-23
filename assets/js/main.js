@@ -2,17 +2,14 @@
 - nome
 - ruolo
 - foto
-MILESTONE 0:
-Creare l’array di oggetti con le informazioni fornite.
-
-
-MILESTONE 2:
-Stampare le stesse informazioni su DOM sottoforma di stringhe
 
 BONUS 1:
 Trasformare la stringa foto in una immagine effettiva
 BONUS 2:
 Organizzare i singoli membri in card/schede */
+
+/* MILESTONE 0:
+Creare l’array di oggetti con le informazioni fornite. */
 
 /* MILESTONE 1:
 Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto */
@@ -46,22 +43,41 @@ images.forEach(movies => {
     console.log(movies.text);
 });
 
-
+/* MILESTONE 2:
+Stampare le stesse informazioni su DOM sottoforma di stringhe */
 
 //Seleziono l'elemento della DOM immagine in cui posizionare tutte le immagini
 const imagesElement = document.querySelector('.slider > .images')
 console.log(imagesElement);
 
+// operatore ternario
+// condizione ? risultato con true : risultato con false
+
 // Aggiungo un nuovo elemento nella dom img più descrizione del film
-images.forEach((movie) => {
+images.forEach((movie, i) => {
+    let isActive = '';
+    if (i === 0) {
+        isActive = 'active'
+    } else{
+        isActive = ''
+    }
     imagesElement.innerHTML += `
-    <div class="movie">
+    <div class="movie ${isActive}">
     <h2 class="movie_title">${movie.title}</h2>
-    <img class="img-fluid" src="./assets/${movie.image}" alt="Movie">
+    <img class="img-fluid" src="./assets/${movie.image}" alt="Movie" ${i}>
     <h3 class="movie_description">${movie.text}</h3>
     </div>`;
 });
 
-
 // Seleziono l'immagine attiva 
 let activeImage = 0;
+
+
+
+
+
+
+
+
+
+
