@@ -58,7 +58,7 @@ images.forEach((movie, i) => {
     let isActive = '';
     if (i === 0) {
         isActive = 'active'
-    } else{
+    } else {
         isActive = ''
     }
     imagesElement.innerHTML += `
@@ -84,8 +84,13 @@ nextEl.addEventListener('click', function () {
     const currentSlide = slideImagesElements[activeImage]
     console.log(currentSlide);
     currentSlide.classList.remove('active')
-    activeImage++
-    slideImagesElements[activeImage].classList.add('active')
+
+    if (activeImage == slideImagesElements.length - 1) {
+        activeImage = 0
+    } else {
+        activeImage++
+    }
+
     const nextImage = slideImagesElements[activeImage]
     console.log(nextImage);
     nextImage.classList.add('active')
@@ -101,7 +106,13 @@ prevEl.addEventListener('click', function () {
     const currentSlide = slideImagesElements[activeImage]
     console.log(currentSlide);
     currentSlide.classList.remove('active')
-    activeImage--
+
+    if (activeImage == 0) {
+        activeImage = slideImagesElements -1
+    } else {
+        activeImage--
+    }
+
     const nextImage = slideImagesElements[activeImage]
     console.log(nextImage);
     nextImage.classList.add('active')
